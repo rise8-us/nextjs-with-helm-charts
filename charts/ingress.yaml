@@ -1,0 +1,11 @@
+ingress:
+  name: hello-world-ingress
+  ingressClassName: nginx
+  hosts:
+    - host: hello-world.k8s.com
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:  
+            serviceName: nextjs-hello-world
+            servicePort: 3000
